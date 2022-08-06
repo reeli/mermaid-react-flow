@@ -6,6 +6,7 @@ export default {
   transform: {
     "^.+\.[t|j]sx?$": "babel-jest"
   },
+  extensionsToTreatAsEsm: [".tsx", ".ts"],
   transformIgnorePatterns: [
     "<rootDir>/node_modules"
   ],
