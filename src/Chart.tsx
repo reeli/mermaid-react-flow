@@ -36,5 +36,7 @@ export const Chart:FC<Props>= () =>{
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
-  return <ReactFlow nodes={nodes} edges={edges} fitView />;
+  return <ReactFlow nodes={nodes} edges={edges} fitView   style={{
+    backgroundColor: '#D3D2E5',
+  }} />;
 }
