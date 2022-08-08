@@ -1,6 +1,7 @@
 import ReactFlow, {useNodesState, useEdgesState} from 'react-flow-renderer';
 import {FC} from "react";
 import {ReactFlowProps} from "react-flow-renderer/dist/esm/types/component-props";
+import {nodeTypes} from "./shapes";
 
 interface Props extends ReactFlowProps {
 }
@@ -8,22 +9,25 @@ interface Props extends ReactFlowProps {
 const initialNodes = [
   {
     id: '1',
-    type: 'dragHandleNode',
-    data: {label: 'Input Node'},
+    type: 'circle',
+    data: {label: 'Input Node',       value:"0"
+    },
     position: {x: 250, y: 25},
   },
 
   {
     id: '2',
-    type: "dragHandleNode",
-    // you can also pass a React component as a label
-    data: {label: "Default NOde"},
+    type: "circle",
+    data: {
+      label: "Input",
+      value:"1"
+    },
     position: {x: 100, y: 125},
   },
   {
     id: '3',
-    type: 'dragHandleNode',
-    data: {label: 'Output Node'},
+    type: 'circle',
+    data: {label: 'Output Node', value: "2"},
     position: {x: 250, y: 250},
   },
 ];
@@ -44,6 +48,7 @@ export const Chart: FC<Props> = () => {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
+        nodeTypes={nodeTypes}
         style={{
           backgroundColor: '#D3D2E5',
         }}
